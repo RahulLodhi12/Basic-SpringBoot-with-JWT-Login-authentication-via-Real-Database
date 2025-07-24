@@ -38,17 +38,20 @@ If present:
     - Sets the SecurityContext with authenticated user.
 
 ✅ 5. UserDetails Service
+
 🔹 MyUserDetailsService:
 - Implements UserDetailsService used by Spring Security.
 - Fetches user by username using SignupRepo.
 - Returns a MyUserDetails object with username, password, and roles.
 
 ✅ 6. JWT Utility
+
 🔹 JwtUtil:
 - Generates JWT token using username (generateToken()).
 - Validates token and extracts subject (username) from it.
 
 ✅ 7. Authentication Flow
+
 🔹 Login Endpoint: POST /authenticate
 - Defined in SignUpController:
 @PostMapping("/authenticate")
@@ -63,6 +66,7 @@ public String createAuthToken(@RequestBody AuthRequest authRequest)
       - Returns the JWT as response.
 
 ✅ 8. Accessing Protected Resources
+
 🔹 Example: GET /admin/users or /user-data
 
 - Steps:
@@ -73,12 +77,14 @@ public String createAuthToken(@RequestBody AuthRequest authRequest)
 4. Controller methods now recognize the authenticated user and can access username or role.
 
 ✅ 9. User Repository
+
 🔹 SignupRepo:
 - Interface to the real database.
 - Auto-implemented by Spring Data JPA.
 - Used to fetch user by username (during login or authorization checks).
 
 ✅ 10. Data Layer
+
 🔹 Signup (Entity):
 - Represents user record with id, username, password, role.
 
