@@ -14,6 +14,7 @@ public static void main(String[] args) {
 - All packages (like bean, controller, config, etc.) are scanned and beans are created and wired.
 
 ✅ 3. Bean Initialization
+
 🔹 SecurityConfig is loaded:
 - Defines URL access rules using HttpSecurity.
 - Configures routes:
@@ -25,6 +26,7 @@ public static void main(String[] args) {
 - Disables session creation (stateless).
 
 ✅ 4. Filter Chain Setup
+
 🔹 JwtFilter is added:
 - It intercepts every request.
 - Checks if the request has a header like:
