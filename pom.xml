@@ -87,6 +87,12 @@
 			<version>8.0.33</version> <!-- or the latest 8.x version -->
 		</dependency>
 
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+
 
 		<dependency>
 			<groupId>jakarta.persistence</groupId>

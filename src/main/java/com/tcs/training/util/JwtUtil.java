@@ -25,15 +25,6 @@ public class JwtUtil {
                 .compact();
     }
 
-//    public String validateTokenAndRetrieveSubject(String token) {
-//        return Jwts.parserBuilder()
-//                .setSigningKey(key)
-//                .build()
-//                .parseClaimsJws(token)
-//                .getBody()
-//                .getSubject();
-//    }
-
     public String validateTokenAndRetrieveSubject(String token) {
         return getClaims(token).getSubject();
     }
