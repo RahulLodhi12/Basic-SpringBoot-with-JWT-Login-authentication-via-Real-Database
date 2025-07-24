@@ -1,1 +1,1 @@
-- Role Based(ADMIN or USER) Login Authentications is pending.. via Real Database.
+- Very Basic Role-Based (ADMIN or USER) Login Authentications Project via Real Database.
