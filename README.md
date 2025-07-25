@@ -101,9 +101,13 @@ main()
                   └─ Validate JWT → set user in context → execute controller
                   
 🔁 Real-life Request Examples
+
 ➤ Login
+
 POST /authenticate
+
 Body: { "username": "rahul", "password": "1234" }
+
 → Returns: JWT token
 
 ➤ Access Admin Resource
