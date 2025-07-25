@@ -99,7 +99,8 @@ main()
              │    └─ AuthManager → DB → JWT → Return token
              └─ If secured endpoint:
                   └─ Validate JWT → set user in context → execute controller
-                  
+
+		  
 🔁 Real-life Request Examples
 
 ➤ Login
@@ -110,7 +111,11 @@ Body: { "username": "rahul", "password": "1234" }
 
 → Returns: JWT token
 
+
 ➤ Access Admin Resource
+
 GET /admin/users
+
 Headers: Authorization: Bearer <JWT_TOKEN>
+
 → Returns: All users if token is valid and user has ROLE_ADMIN
