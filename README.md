@@ -93,15 +93,6 @@ public String createAuthToken(@RequestBody AuthRequest authRequest)
 
 ![image alt](https://github.com/RahulLodhi12/Basic-SpringBoot-with-JWT-Login-authentication-via-Real-Database/blob/e20621fea94c9c0c31ff5eb7aa6734ae3741aa8a/flow.png)
 
-main()
- └─ Spring Boot starts
-     └─ SecurityConfig sets rules and adds JwtFilter
-         └─ JwtFilter checks every request
-             ├─ If login (/authenticate):
-             │    └─ AuthManager → DB → JWT → Return token
-             └─ If secured endpoint:
-                  └─ Validate JWT → set user in context → execute controller
-
 		  
 🔁 Real-life Request Examples
 
