@@ -15,45 +15,45 @@ public static void main(String[] args) {
 
 ✅ 3. Bean Initialization
 
-🔹 SecurityConfig is loaded:
-- Defines URL access rules using HttpSecurity.
+🔹 "SecurityConfig" is loaded:
+- Defines URL access rules using "HttpSecurity".
 - Configures routes:
     - "/authenticate" and "/welcome" are public
     - "/admin/users" requires ROLE_ADMIN
     - "/user-data" requires ROLE_USER
 
-- Adds custom filter JwtFilter before Spring’s default authentication filter.
+- Adds custom filter "JwtFilter" before Spring’s default authentication filter.
 - Disables session creation (stateless).
 
 ✅ 4. Filter Chain Setup
 
-🔹 JwtFilter is added:
+🔹 "JwtFilter" is added:
 - It intercepts every request.
 - Checks if the request has a header like:
 - Authorization: Bearer <JWT_TOKEN>
 
 If present:
     - Extracts username from token.
-    - Loads user from DB via MyUserDetailsService.
-    - Sets the SecurityContext with authenticated user.
+    - Loads user from DB via "MyUserDetailsService".
+    - Sets the "SecurityContext" with authenticated user.
 
 ✅ 5. UserDetails Service
 
-🔹 MyUserDetailsService:
-- Implements UserDetailsService used by Spring Security.
-- Fetches user by username using SignupRepo.
-- Returns a MyUserDetails object with username, password, and roles.
+🔹 "MyUserDetailsService":
+- Implements "UserDetailsService" used by Spring Security.
+- Fetches user by username using "SignupRepo".
+- Returns a "MyUserDetails" object with username, password, and roles.
 
 ✅ 6. JWT Utility
 
-🔹 JwtUtil:
+🔹 "JwtUtil":
 - Generates JWT token using username (generateToken()).
 - Validates token and extracts subject (username) from it.
 
 ✅ 7. Authentication Flow
 
 🔹 Login Endpoint: POST /authenticate
-- Defined in SignUpController:
+- Defined in "SignUpController":
 @PostMapping("/authenticate")
 public String createAuthToken(@RequestBody AuthRequest authRequest)
 
@@ -78,14 +78,14 @@ public String createAuthToken(@RequestBody AuthRequest authRequest)
 
 ✅ 9. User Repository
 
-🔹 SignupRepo:
+🔹 "SignupRepo":
 - Interface to the real database.
 - Auto-implemented by Spring Data JPA.
 - Used to fetch user by username (during login or authorization checks).
 
 ✅ 10. Data Layer
 
-🔹 Signup (Entity):
+🔹 "Signup" (Entity):
 - Represents user record with id, username, password, role.
 
 
